@@ -33,7 +33,7 @@ namespace ConsoleApp24
             bool condition = false;
             double u = 0;
 
-            if ((y <= 1 - x * x) && x * x + Math.Pow((y - 1), 2) <= 1) condition = true; //проверка принадлежности к заштрихованной области
+            if ((y <= 1 - x * x) && (x * x + Math.Pow((y - 1), 2) <= 1)) condition = true; //проверка принадлежности к заштрихованной области
 
             switch (condition)
             {
