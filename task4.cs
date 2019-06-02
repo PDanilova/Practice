@@ -8,14 +8,14 @@ namespace task4
 {
     class Program
     {
-        static double fact (double number)
+        static double Fact (double number)
         {
             if (number < 0)
                 return 0;
             if (number == 0)
                 return 1;
             else
-                return number * fact(number - 1);
+                return number * Fact(number - 1);
         }
 
         static void Main(string[] args)
@@ -39,7 +39,7 @@ namespace task4
 
             while (true)
             {
-                sl = Math.Pow(-2, i) / fact(i);
+                sl = Math.Pow(-2, i) / Fact(i);
                 if (Math.Abs(sl) < epsilon) break;
                 sum += sl;
                 i++;
