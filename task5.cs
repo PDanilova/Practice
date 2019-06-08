@@ -99,5 +99,4 @@ namespace task5
             Console.ReadKey();
         }
     }
-
 }
