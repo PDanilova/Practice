@@ -28,19 +28,35 @@ namespace task1
 
             }
 
+            int r = 0;
+
             for (int i = 0; i < m; i++)
             {
                 string [] numbers  = Console.ReadLine().Split();
                 int first = int.Parse(numbers[0]);
                 int second = int.Parse(numbers[1]);
                 
-                if (first > second)
+                if (table[0,first - 1] > table[0,second - 1])
                 {
-                    table[0, second - 1] = first;
+                    r = table[0, second - 1];
+                    for (int k = 0; k < n; k++)
+                    {
+                        if (table [0,k] == r)
+                        {
+                            table[0, k] = table[0, first - 1];
+                        }
+                    }
                 }
                 else
                 {
-                    table[0, first - 1] = second;
+                    r = table[0, first - 1];
+                    for (int k = 0; k < n; k++)
+                    {
+                        if (table[0, k] == r)
+                        {
+                            table[0, k] = table[0, second - 1];
+                        }
+                    }
                 }
                 
             }
@@ -49,20 +65,29 @@ namespace task1
 
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < n; i++)
+                int sum = 0;
+                if (!colbs.ContainsKey(table[0,i]))
                 {
-                    if (i != j && table[0, i] == table[0, j])
-                    {
-                        int sum = table[1, i] + table[1, j];
-                        colbs.Add(table[0, i], sum);
-                    }
+                    colbs.Add(table[0, i], table[1, i]);
                 }
+                else
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        if (table [0,j]== table[0, i])
+                        {
+                            sum = sum + table[1, j];
+                        }
+                    }
+                    colbs[table[0, i]] = sum;
+                }
+                
             }
 
-            foreach ()
-
-            Console.ReadKey();
-
+            foreach (var x in colbs)
+            {
+                Console.WriteLine("{0} {1}", x.Key, x.Value);
+            }
         }
     }
 }
