@@ -88,6 +88,8 @@ namespace task1
             {
                 Console.WriteLine("{0} {1}", x.Key, x.Value);
             }
+
+            Console.ReadKey();
         }
     }
 }
