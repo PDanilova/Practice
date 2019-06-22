@@ -126,6 +126,8 @@ namespace task2
             
             string res = new string(newText);
             Console.Write(res);
+
+            Console.ReadKey();
             
         }
     }
