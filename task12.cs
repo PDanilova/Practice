@@ -107,8 +107,8 @@ namespace task12
                 array[j + 1] = buf;
             }
 
-            Console.WriteLine("\nКоличество сравнений: " + countChange);
-            Console.WriteLine("Количество изменений: " + countEqual);
+            Console.WriteLine("\nКоличество сравнений: " + countEqual);
+            Console.WriteLine("Количество изменений: " + countChange);
 
         }
 
